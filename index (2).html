@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5fb">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Көнерген сөздер, архаизмдер мен тарихи сөздер бойынша алты сұрақтан тұратын қазақша тест.">
+  <title>Test 111 · Көнерген сөздер</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%235a3dd8'/%3E%3Cpath d='m11 20 6 6 12-12' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f6f5fb;
+      --surface: #fff;
+      --ink: #201b32;
+      --muted: #625b73;
+      --line: #e6e1ef;
+      --primary: #5a3dd8;
+      --primary-dark: #492dbb;
+      --tint: #f0ebff;
+      --green: #1c684e;
+      --green-bg: #e9f6ed;
+      --red: #912d4a;
+      --red-bg: #fcecf0;
+      --shadow: 0 8px 24px #2d1e5d08;
+      font-family: "Aptos", "Segoe UI", system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    body { min-width: 0; margin: 0; background: var(--page); color: var(--ink); }
+    [hidden] { display: none !important; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: default; }
+    :focus-visible { outline: 3px solid #8463f5; outline-offset: 4px; }
+    [tabindex="-1"]:focus { outline: none; }
+    .wrap { width: min(1024px, calc(100% - 48px)); margin-inline: auto; }
+
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--line); }
+    .topbar .wrap { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 780; letter-spacing: -.025em; }
+    .brand-icon { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 11px; background: var(--primary); color: white; }
+    .brand-icon svg { width: 21px; height: 21px; }
+    .subject { color: var(--muted); font-size: 14px; font-weight: 600; }
+
+    main.wrap { padding-block: 28px 48px; }
+    .hero { position: relative; isolation: isolate; overflow: hidden; min-height: 171px; margin-bottom: 21px; padding: 28px 33px; border: 1px solid #e3d8fd; border-radius: 25px; background: #eee8ff; }
+    .hero-copy { position: relative; z-index: 1; }
+    .kicker { display: inline-flex; align-items: center; gap: 7px; color: #5436b9; font-weight: 750; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+    .kicker-dot { width: 7px; height: 7px; border-radius: 50%; background: #8060ec; }
+    h1 { margin: 7px 0 5px; font-size: clamp(31px, 5vw, 47px); line-height: 1.1; letter-spacing: -.05em; }
+    .hero p { margin: 0; color: #564a73; font-size: 15px; line-height: 1.5; }
+    .hero-art { position: absolute; height: 100%; width: 300px; right: 0; top: 0; }
+
+    .layout { display: grid; grid-template-columns: minmax(0, 1fr) 240px; align-items: start; gap: 19px; }
+    .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 23px; box-shadow: var(--shadow); }
+    .question-panel { padding: 26px 29px 23px; }
+    .step { margin: 0 0 9px; color: var(--primary); font-size: 13px; font-weight: 750; letter-spacing: .06em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(22px, 3vw, 29px); line-height: 1.24; letter-spacing: -.035em; }
+    .prompt-hint { margin: 8px 0 17px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+    fieldset { min-width: 0; margin: 0; padding: 0; border: 0; }
+    .options { display: grid; gap: 8px; }
+    .option { position: relative; display: grid; grid-template-columns: 35px minmax(0, 1fr) 20px; align-items: center; gap: 11px; min-height: 58px; padding: 10px 13px; border: 1px solid var(--line); border-radius: 13px; background: #fff; cursor: pointer; font-size: 15px; line-height: 1.45; transition: background-color 140ms, border-color 140ms; }
+    .option:hover { border-color: #b9a6f2; background: #faf8ff; }
+    .option:has(input:checked) { border-color: #8d70ef; background: #f7f3ff; }
+    .option:has(input:focus-visible) { outline: 3px solid #8463f5; outline-offset: 2px; }
+    .option input { position: absolute; inset: 0; opacity: 0; cursor: pointer; margin: 0; width: 100%; height: 100%; }
+    .option-letter { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: #f2eff8; color: #514569; font-size: 14px; font-weight: 750; }
+    .option:has(input:checked) .option-letter { background: var(--primary); color: #fff; }
+    .radio-mark { display: grid; place-items: center; width: 18px; height: 18px; border: 1.5px solid #b8afc8; border-radius: 50%; }
+    .option:has(input:checked) .radio-mark { border-color: var(--primary); }
+    .option:has(input:checked) .radio-mark::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--primary); }
+
+    .actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: 8px; min-height: 46px; padding: 10px 15px; border-radius: 11px; border: 1px solid transparent; font-size: 14px; font-weight: 740; line-height: 1.2; transition: background-color 140ms; }
+    .button svg { width: 17px; height: 17px; flex: none; }
+    .button.primary { background: var(--primary); color: #fff; }
+    .button.primary:hover { background: var(--primary-dark); }
+    .button.primary:disabled { background: #e9e3fa; color: #675a87; }
+    .button.secondary { background: #fff; color: #4b405e; border-color: var(--line); }
+    .button.secondary:hover { background: #f7f4ff; }
+    .button.secondary:disabled { color: #726984; background: #f9f7fc; }
+
+    .progress-panel { padding: 21px 17px 19px; }
+    .progress-label { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; margin: 0; font-size: 15px; font-weight: 740; }
+    .progress-count { color: var(--primary); font-size: 14px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    progress { appearance: none; width: 100%; height: 7px; display: block; overflow: hidden; margin-top: 11px; border: 0; border-radius: 10px; background: #eee9f7; color: var(--primary); }
+    progress::-webkit-progress-bar { background: #eee9f7; }
+    progress::-webkit-progress-value { background: var(--primary); border-radius: 10px; }
+    progress::-moz-progress-bar { background: var(--primary); border-radius: 10px; }
+    .jump { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5px; margin-top: 16px; }
+    .jump button { min-height: 37px; padding: 0; border: 1px solid var(--line); border-radius: 8px; background: #fff; color: var(--muted); font-size: 13px; font-weight: 720; }
+    .jump button:hover, .jump button.answered { background: var(--tint); color: var(--primary); border-color: #ded4fb; }
+    .jump button[aria-current="step"] { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .results { padding: 29px; }
+    .summary { display: flex; align-items: center; gap: 17px; margin-bottom: 22px; }
+    .score { display: grid; align-content: center; justify-content: center; flex: none; width: 84px; height: 84px; border-radius: 20px; background: var(--tint); color: var(--primary); font-size: 26px; font-weight: 800; font-variant-numeric: tabular-nums; letter-spacing: -.06em; }
+    .summary p { margin: 6px 0 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+    .review { display: grid; gap: 8px; }
+    details { border: 1px solid var(--line); border-radius: 12px; }
+    summary { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: 9px; min-height: 54px; padding: 8px 12px; cursor: pointer; font-size: 14px; font-weight: 660; line-height: 1.4; list-style: none; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: ""; width: 8px; height: 8px; margin: 0 4px 4px 3px; border-right: 2px solid #716782; border-bottom: 2px solid #716782; transform: rotate(45deg); }
+    details[open] summary::after { transform: rotate(225deg); margin-top: 6px; }
+    .status-icon { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 7px; background: var(--green-bg); color: var(--green); font-weight: 800; }
+    .status-icon.wrong { background: var(--red-bg); color: var(--red); }
+    .review-copy { padding: 0 14px 12px 49px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .review-copy p { margin: 4px 0; }
+    .review-copy strong { color: var(--ink); }
+    .restart { margin-top: 17px; }
+    .noscript { padding: 20px; }
+
+    @media (max-width: 830px) {
+      .layout { grid-template-columns: minmax(0, 1fr) 205px; gap: 13px; }
+      .progress-panel { padding-inline: 12px; }
+    }
+    @media (max-width: 690px) {
+      .wrap { width: calc(100% - 28px); }
+      .topbar .wrap { min-height: 56px; }
+      .brand-icon { width: 33px; height: 33px; }
+      main.wrap { padding-block: 15px 30px; }
+      .hero { min-height: 0; margin-bottom: 12px; padding: 18px 17px; border-radius: 19px; }
+      .hero p { max-width: 32ch; font-size: 14px; }
+      .hero-art { display: none; }
+      .layout { grid-template-columns: minmax(0, 1fr); gap: 11px; }
+      .panel { border-radius: 17px; }
+      .progress-panel { grid-row: 1; padding: 13px 15px; }
+      .progress-label { font-size: 13px; }
+      progress { height: 5px; margin-top: 6px; }
+      .jump { display: none; }
+      .question-panel, .results { padding: 17px 15px; }
+      .option { grid-template-columns: 30px minmax(0, 1fr) 16px; gap: 9px; min-height: 53px; padding: 8px 9px; }
+      .option-letter { width: 30px; height: 30px; }
+      .radio-mark { width: 16px; height: 16px; }
+      .actions { margin-top: 15px; padding-top: 14px; }
+      .score { width: 70px; height: 70px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 5h14v14H5z" opacity=".58"/><path d="m8.5 12 2.3 2.3 4.7-4.7"/>
+          </svg>
+        </span>
+        <span lang="en">Test 111</span>
+      </div>
+      <span class="subject">Қазақ тілі</span>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <header class="hero">
+      <div class="hero-copy">
+        <div class="kicker"><span class="kicker-dot" aria-hidden="true"></span> 6 сұрақ</div>
+        <h1>Көнерген сөздер</h1>
+        <p>Архаизмдер мен тарихи сөздер бойынша тест</p>
+      </div>
+      <svg class="hero-art" viewBox="0 0 300 170" fill="none" aria-hidden="true">
+        <circle cx="214" cy="85" r="117" fill="#e7ddff"/>
+        <circle cx="214" cy="85" r="89" stroke="#d8c8ff"/>
+        <circle cx="214" cy="85" r="68" stroke="#d8c8ff"/>
+        <path d="M61 83h17m-8.5-8.5v17M259 37h14m-7-7v14" stroke="#9374ea" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="102" cy="41" r="3.5" fill="#a68ef1"/>
+        <circle cx="258" cy="135" r="3.5" fill="#a68ef1"/>
+        <g transform="rotate(-10 173 85)">
+          <path d="M130 48a7 7 0 0 1 7-7h72a7 7 0 0 1 7 7v87h-79a7 7 0 0 1-7-7z" fill="#b79df8"/>
+          <path d="M124 41a7 7 0 0 1 7-7h71a7 7 0 0 1 7 7v87h-78a7 7 0 0 1-7-7z" fill="#faf7ff" stroke="#6f50da" stroke-width="2"/>
+          <path d="M124 117a7 7 0 0 1 7-7h78m-69-76v76" stroke="#6f50da" stroke-width="2" stroke-linecap="round"/>
+          <path d="M153 56h38m-38 11h31m-31 11h36m-36 11h22" stroke="#bdabf2" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="213" cy="106" r="20" fill="#6f50da"/>
+          <path d="m205 106 5.5 5.5L221 101" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+    </header>
+
+    <div class="layout" id="quiz" hidden>
+      <section class="panel question-panel" aria-labelledby="question-title">
+        <p class="step" id="step"></p>
+        <h2 id="question-title" tabindex="-1"></h2>
+        <p class="prompt-hint" id="question-hint">Бір жауапты таңдаңыз.</p>
+        <form id="question-form">
+          <fieldset aria-labelledby="question-title" aria-describedby="question-hint">
+            <div class="options" id="options"></div>
+          </fieldset>
+          <div class="actions">
+            <button class="button secondary" type="button" id="previous">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg>
+              Артқа
+            </button>
+            <button class="button primary" type="submit" id="next">
+              <span id="next-label">Келесі сұрақ</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <aside class="panel progress-panel" aria-label="Тест барысы">
+        <p class="progress-label">
+          <span>Жауап берілді</span>
+          <span class="progress-count" id="progress-count" aria-live="polite"></span>
+        </p>
+        <progress id="progress" aria-label="Жауап берілген сұрақтар"></progress>
+        <nav class="jump" id="jump" aria-label="Сұрақтар"></nav>
+      </aside>
+    </div>
+
+    <section class="panel results" id="results" aria-labelledby="result-title" hidden>
+      <div class="summary">
+        <div class="score" id="score" aria-hidden="true"></div>
+        <div>
+          <p class="step">Test 111</p>
+          <h2 id="result-title" tabindex="-1">Тест нәтижесі</h2>
+          <p id="result-description"></p>
+        </div>
+      </div>
+      <div class="review" id="review"></div>
+      <button class="button primary restart" type="button" id="restart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11a9 9 0 1 1 2.5 7M3 5v6h6"/></svg>
+        Қайта тапсыру
+      </button>
+    </section>
+
+    <noscript><p class="panel noscript">Тестті ашу үшін браузерде JavaScript қосыңыз.</p></noscript>
+  </main>
+
+  <script>
+    const questions = [
+      {
+        prompt: 'Көнерген сөздердің анықтамасын көрсетіңіз',
+        options: [
+          'Қоғам дамуына байланысты тілімізге енген жаңа сөздер',
+          'Белгілі бір мамандық, шаруашылық саласында жүрген адамдардың өзара қарым-қатынасында қолданылатын сөздер.',
+          'Тілдегі қолданыстан шығып қалған сөздер',
+          'Басқа тілден енген сөздер',
+        ],
+        correct: [2],
+        explanation: 'Көнерген сөздер күнделікті қолданыстан шығып қалған немесе сирек қолданылады.',
+      },
+      {
+        prompt: 'Архаизмнің анықтамасын көрсетіңіз',
+        options: [
+          'Халықтың тұрмыс-тіршілігіне, әдет-ғұрпына байланысты қолданылатын, әр дәуірде өзгеріп, басқа сөздермен ауысып отыратын ескірген сөздер.',
+          'Белгілі бір кәсіппен, шаруашылық саласымен шұғылданатын адамдар қолданатын, көпшілікке бірдей түсінікті бола бермейтін сөздер',
+          'Қолданылған дәуірі өтіп, ескі заманның өзімен бірге көнерген тарихи атаулар.',
+          'Жалпыхалықтық сипат алмаған, белгілі бір аймақ тұрғындары қолданатын сөздер',
+        ],
+        correct: [0],
+        explanation: 'Архаизм — қазіргі тілде басқа сөзбен аталып жүрген ұғымның ескі атауы.',
+      },
+      {
+        prompt: 'Көнерген сөзі бар қатарды анықтаңыз',
+        options: [
+          'Қолымнан домбырамды қалды тартып',
+          'Аттар ерттелгелі де бірталай уақыт болған еді',
+          'Жанбота, өзің болыс, әкең Қарпық',
+          'Ұл-қызыңның игілігін көр, жақсы ана',
+        ],
+        correct: [2],
+        explanation: '«Болыс» — бұрынғы ел басқару жүйесіне қатысты тарихи атау.',
+      },
+      {
+        prompt: 'Тарихи сөздер берілген қатарды көрсетіңіз',
+        options: [
+          'Отарба, қол, қосын',
+          'Желек, жасақ, барымта',
+          'Жазушы, молда, шешен',
+          'Құл, қосшы, сұлтан',
+        ],
+        correct: [3],
+        explanation: '«Құл» бұрынғы әлеуметтік мәртебені, «қосшы» тарихи одақ атауын, «сұлтан» бұрынғы билік атағын білдіреді.',
+      },
+      {
+        prompt: '«Болыс» сөзі неліктен историзмге жатады?',
+        options: [
+          'Басқа тілден енгендіктен',
+          'Атауы көнергенімен, қоғамда әлі де сұранысқа ие ұғым болғандықтан',
+          'Бұрынғы әкімшілік басқару жүйесіне байланысты тарихи атау болғандықтан',
+          'Қазіргі жастар жиі қолданатындықтан',
+        ],
+        correct: [2],
+        explanation: '«Болыс» бұрынғы әкімшілік бөліністі және оны басқарған адамды атаған.',
+      },
+      {
+        prompt: '«Шоқпар, сауыт, желек, бел құда» сөздерінің ішінен архаизмге жататын сөзді көрсетіңіз',
+        options: [
+          'Шоқпар',
+          'Сауыт',
+          'Желек',
+          'Бел құда',
+        ],
+        correct: [2, 3],
+        explanation: '«Желек» — келіннің басына жабатын орамалдың көне атауы. «Бел құда» салт-дәстүрге қатысты архаизм ретінде де жіктеледі. Осы сұрақта екі нұсқаның кез келгені дұрыс саналады.',
+      },
+    ];
+
+    const letters = ['А', 'Ә', 'Б', 'В'];
+    const answers = Array(questions.length).fill(null);
+    let current = 0;
+
+    const byId = (id) => document.getElementById(id);
+    const quiz = byId('quiz');
+    const results = byId('results');
+    const title = byId('question-title');
+    const form = byId('question-form');
+    const options = byId('options');
+    const previous = byId('previous');
+    const next = byId('next');
+    const progress = byId('progress');
+    const jump = byId('jump');
+
+    const jumpButtons = questions.map((question, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = index + 1;
+      button.addEventListener('click', () => showQuestion(index));
+      jump.append(button);
+      return button;
+    });
+    progress.max = questions.length;
+
+    function updateProgress() {
+      const answered = answers.filter(answer => answer !== null).length;
+      byId('progress-count').textContent = answered + ' / ' + questions.length;
+      progress.value = answered;
+      jumpButtons.forEach((button, index) => {
+        const done = answers[index] !== null;
+        button.classList.toggle('answered', done);
+        button.setAttribute('aria-label', (index + 1) + '-сұрақ' + (done ? ', жауап берілді' : ''));
+        if (index === current) button.setAttribute('aria-current', 'step');
+        else button.removeAttribute('aria-current');
+      });
+      previous.disabled = current === 0;
+      next.disabled = answers[current] === null;
+      const isLast = current === questions.length - 1;
+      byId('next-label').textContent = isLast ? 'Нәтижені көру' : 'Келесі сұрақ';
+    }
+
+    function showQuestion(index, focus = true) {
+      current = index;
+      const question = questions[index];
+      byId('step').textContent = (index + 1) + ' / ' + questions.length + ' сұрақ';
+      title.textContent = question.prompt;
+
+      options.replaceChildren(...question.options.map((text, optionIndex) => {
+        const label = document.createElement('label');
+        label.className = 'option';
+
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = 'answer';
+        input.value = optionIndex;
+        input.checked = answers[index] === optionIndex;
+
+        const letter = document.createElement('span');
+        letter.className = 'option-letter';
+        letter.textContent = letters[optionIndex];
+        const copy = document.createElement('span');
+        copy.textContent = text;
+        const mark = document.createElement('span');
+        mark.className = 'radio-mark';
+        mark.setAttribute('aria-hidden', 'true');
+
+        label.append(input, letter, copy, mark);
+        return label;
+      }));
+
+      updateProgress();
+      if (focus) {
+        title.focus({ preventScroll: true });
+        quiz.scrollIntoView({ block: 'nearest' });
+      }
+    }
+
+    function formatAnswer(question, index) {
+      return letters[index] + ') ' + question.options[index];
+    }
+
+    function reviewQuestion(question, index, isCorrect) {
+      const details = document.createElement('details');
+      const summary = document.createElement('summary');
+      const icon = document.createElement('span');
+      icon.className = isCorrect ? 'status-icon' : 'status-icon wrong';
+      icon.textContent = isCorrect ? '✓' : '×';
+      icon.setAttribute('role', 'img');
+      icon.setAttribute('aria-label', isCorrect ? 'Дұрыс' : 'Қате');
+
+      const heading = document.createElement('span');
+      heading.textContent = (index + 1) + '. ' + question.prompt;
+      summary.append(icon, heading);
+
+      const copy = document.createElement('div');
+      copy.className = 'review-copy';
+
+      const chosen = document.createElement('p');
+      chosen.textContent = 'Сіздің жауабыңыз — ' + formatAnswer(question, answers[index]);
+
+      const expected = document.createElement('p');
+      const key = document.createElement('strong');
+      key.textContent = question.correct.length > 1 ? 'Қабылданатын жауаптар — ' : 'Дұрыс жауап — ';
+      expected.append(key, question.correct.map(answer => formatAnswer(question, answer)).join(' немесе '));
+
+      const explanation = document.createElement('p');
+      explanation.textContent = question.explanation;
+      copy.append(chosen, expected, explanation);
+      details.append(summary, copy);
+      return details;
+    }
+
+    function finish() {
+      const correct = questions.map((question, index) => question.correct.includes(answers[index]));
+      const count = correct.filter(Boolean).length;
+      byId('score').textContent = count + ' / ' + questions.length;
+      byId('result-description').textContent = 'Дұрыс жауап саны — ' + count + ' / ' + questions.length + '. Түсіндірмені көру үшін сұрақты ашыңыз.';
+      byId('review').replaceChildren(...questions.map((question, index) => reviewQuestion(question, index, correct[index])));
+      quiz.hidden = true;
+      results.hidden = false;
+      byId('result-title').focus({ preventScroll: true });
+      results.scrollIntoView({ block: 'start' });
+    }
+
+    form.addEventListener('change', (event) => {
+      answers[current] = Number(event.target.value);
+      updateProgress();
+    });
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (answers[current] === null) return;
+      if (current < questions.length - 1) {
+        showQuestion(current + 1);
+        return;
+      }
+      const unanswered = answers.indexOf(null);
+      if (unanswered === -1) finish();
+      else showQuestion(unanswered);
+    });
+    previous.addEventListener('click', () => showQuestion(current - 1));
+    byId('restart').addEventListener('click', () => {
+      answers.fill(null);
+      results.hidden = true;
+      quiz.hidden = false;
+      showQuestion(0);
+    });
+
+    showQuestion(0, false);
+    quiz.hidden = false;
+  </script>
+</body>
+</html>
